@@ -1,0 +1,29 @@
+type Query {
+    getArtist(name:String):Artist
+    getArtists:[Artist]
+}
+type Artist {
+    id:ID!
+    name:String
+    totalSongs:Int!
+    totalTenMilViews:Int
+    songs: [Song]
+}
+
+type Song {
+    id: ID!
+    artist: String
+    urlSpotify: String
+    track: String
+    album: String
+    albumType: String
+    danceability: Float
+    energy: Float
+    duration: Int
+    urlYoutube: String
+    youtubeTitle: String
+    views: Int
+    likes: Int
+    comments: Int
+    stream: Int
+}
