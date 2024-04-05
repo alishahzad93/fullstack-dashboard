@@ -4,6 +4,7 @@ import {SongSmallCard} from "../components/SongSmallCard";
 import { gql, useQuery } from '@apollo/client';
 import {GET_ARTIST} from '../Graphql/Queries'
 import {useParams} from "react-router-dom";
+import  './ArtistPage.css';
 
 export const ArtistPage= () => {
 
@@ -41,9 +42,15 @@ export const ArtistPage= () => {
     }
     return (
         <div className="ArtistPage">
-            <h1>{artist.name}</h1>
+            <div className="artist-name-section"><h1 className="artist-name">{artist.name}</h1></div>
+            <div className="views-graph-section">views graph</div>
+            <div className="song-detail-section">
             <SongDetailCard song={artist.songs[0]}/>
+            </div>
             {artist.songs.slice(1).map(song => <SongSmallCard song={song}/>)}
+            <div className="more-link">
+                <a href="#">More ></a>
+            </div>
         </div>
     );
 }

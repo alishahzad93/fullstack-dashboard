@@ -1,0 +1,28 @@
+.ArtistPage {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+.artist-name-section {
+    grid-column: span 3;
+    justify-self: start;
+    align-self: end;
+}
+.artist-name {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+.views-graph-section {
+    grid-column: span 2;
+    justify-self: center;
+}
+.song-detail-section {
+    grid-column: span 5;
+}
+.more-link {
+    align-self: center;
+    justify-self: center;
+    font-size: 1.5rem;
+}

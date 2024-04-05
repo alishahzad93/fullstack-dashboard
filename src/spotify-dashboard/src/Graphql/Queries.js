@@ -16,3 +16,20 @@ export const GET_ARTIST = gql`
         }
     }
 `;
+export const GET_SONGS = gql`
+    query GetSongsByArtist($name: String!) {
+        getSongsByArtist(name: $name) {
+            artist
+            urlSpotify
+            track
+            album
+            urlYoutube
+            youtubeTitle
+            views
+            likes
+            comments
+            stream
+            
+        }
+    }
+`;

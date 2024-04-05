@@ -11,6 +11,7 @@ import java.util.List;
 @Repository
 public interface SongRepository extends JpaRepository<Song, Long> {
     List<Song> findByArtistOrderByViewsDesc(String name, Pageable pageable);
+    List<Song> findByArtistOrderByViewsDesc(String name);
 
     default List<Song> findTopSongsByArtist(String name, int count) {
         return findByArtistOrderByViewsDesc(name, PageRequest.of(0,count));

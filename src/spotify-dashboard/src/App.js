@@ -3,6 +3,7 @@ import {ArtistPage} from "./pages/ArtistPage";
 import {ApolloClient, InMemoryCache, ApolloProvider, HttpLink, from} from "@apollo/client";
 import {onError} from "@apollo/client/link/error";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import {SongPage} from "./pages/SongPage";
 
 const errorLink = onError(({graphqlErrors, networkError}) => {
     if(graphqlErrors) {
@@ -26,9 +27,7 @@ function App() {
               <Router>
                   <Routes>
                       <Route path="/artists/:artistName" element={<ArtistPage />} /> {/* Use the 'element' prop to specify the component */}
-                      {/*<Route path="/artists">*/}
-                      {/*    <ArtistPage/>*/}
-                      {/*</Route>*/}
+                      <Route path="/artists/:artistName/songs" element={<SongPage />} /> {/* Use the 'element' prop to specify the component */}
                   </Routes>
 
               </Router>

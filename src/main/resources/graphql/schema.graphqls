@@ -1,6 +1,7 @@
 type Query {
     getArtist(name:String):Artist
     getArtists:[Artist]
+    getSongsByArtist(name:String):[Song]
 }
 type Artist {
     id:ID!

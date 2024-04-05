@@ -1,6 +1,7 @@
 package com.aliments.spotifydashboard.controller;
 
 import com.aliments.spotifydashboard.model.Artist;
+import com.aliments.spotifydashboard.model.Song;
 import com.aliments.spotifydashboard.repository.ArtistRepository;
 import com.aliments.spotifydashboard.repository.SongRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,10 @@ public class ArtistGraphqlController {
         Artist artist = artistRepository.findByName(name);
         artist.setSongs(songRepository.findTopSongsByArtist(name,5));
         return artist;
+    }
+    @QueryMapping("getSongsByArtist")
+    public List<Song> getSongsByArtist(@Argument String name) {
+        return songRepository.findByArtistOrderByViewsDesc(name);
     }
     @QueryMapping("getArtists")
     public List<Artist> getArtists() {
